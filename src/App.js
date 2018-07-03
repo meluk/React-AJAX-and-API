@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import MovieCard from './components/MovieCard'
+import NavBar from './components/NavBar'
 
 /*const originalMovies = [
   { id: 1, title: 'Star Wars'},
@@ -21,8 +22,12 @@ class App extends Component {
   render() {
     const {movies} = this.state;
     return (
-      <div className="App">
-        {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
+  
+     <div className="App">
+         <NavBar />
+        <div className="movies">
+          {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
+        </div>
       </div>
     );
   }
