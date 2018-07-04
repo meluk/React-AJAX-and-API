@@ -1,6 +1,7 @@
 .movies{
+  margin-top: 8px;
   display: flex;
-  flex-wrap: wrap !important;
+  flex-wrap: wrap;
 }
 .movie-image{
   height: 169px;

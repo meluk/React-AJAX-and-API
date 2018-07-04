@@ -8,30 +8,35 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 class MovieCard extends React.Component {
-    render(){
+    //function
+    selectMovie = () => {
+      //cost is generally a safer way to declare variables
+      const {movie, selectMovie} = this.props;
+      selectMovie(movie);
+    }
+    render(){  
         const {movie} = this.props;
-
         //return(<div> {movie.title}</div>)
         return <Card className='movie-card'>
         <CardMedia
           className="movie-image"
           image={`http://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
-          title="Contemplative Reptile"
+          title={movie.title}
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
             {movie.title}
           </Typography>
           <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {movie.overview}
           </Typography>
         </CardContent>
         <CardActions>
           <Button size="small" color="primary">
             Share
           </Button>
-          <Button size="small" color="primary">
+          {/* Add the funtion */}
+          <Button size="small" color="primary" onClik={this.selectMovie}>
             Learn More
           </Button>
         </CardActions>

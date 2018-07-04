@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import MovieCard from './components/MovieCard'
-import NavBar from './components/NavBar'
+import MovieCard from './components/MovieCard';
+import NavBar from './components/NavBar';
+//import MovieDialog from './components/MovieDialog'
 
 /*const originalMovies = [
   { id: 1, title: 'Star Wars'},
@@ -11,7 +12,11 @@ import NavBar from './components/NavBar'
 ];*/
 
 class App extends Component {
-  state = {movies: []};
+  //create array
+  state = {movies: [], selectedMovie: null};
+  
+  selectedMovie = movie => this.componentDidCatch.setState({selectedMovie: movie});
+  clearMovie = () => this.setState({selectedMovie: null});
 
   async componentDidMount(){
     //setTimeout(() => this.setState({ movies: originalMovies }), 5000);
@@ -26,7 +31,7 @@ class App extends Component {
      <div className="App">
          <NavBar />
         <div className="movies">
-          {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
+          {movies.map(movie => <MovieCard key={movie.id} movie={movie} selectedMovie={this.movie}/>)}
         </div>
       </div>
     );
