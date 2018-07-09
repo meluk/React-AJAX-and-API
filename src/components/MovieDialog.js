@@ -8,12 +8,24 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default class MovieDialog extends React.Component {
+  /*state = {
+    open: false,
+  };
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };*/
 
   render() {
       const {movie, handleClose} = this.props;
+      console.log('moviDia', movie);
     return (
       <div>
-        <Button onClick={this.handleClickOpen}>Open form dialog</Button>
+        <Button onClick={this.handleClickOpen}>More</Button>
         <Dialog
           open={!!movie}
           onClose={handleClose}
@@ -35,7 +47,7 @@ export default class MovieDialog extends React.Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={handleClose} color="primary">
               Cancel
             </Button>
             <Button onClick={this.handleClose} color="primary">
