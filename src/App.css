@@ -10,3 +10,8 @@
 .movie-card{
   width: 300px; 
 }
+
+.movie-detail-image{
+  height: 513px;
+  width: 342px;
+}
