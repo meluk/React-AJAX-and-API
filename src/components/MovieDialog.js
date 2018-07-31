@@ -46,6 +46,24 @@ export default class MovieDialog extends React.Component {
               disabled
               fullWidth
             />
+            <TextField
+              label="Popularity"
+              value={movie.popularity}
+              disabled
+              fullWidth
+            />
+            <TextField
+              label="Vote Average"
+              value={movie.vote_average}
+              disabled
+              fullWidth
+            />
+            <TextField
+              label="Vote Count"
+              value={movie.vote_count}
+              disabled
+              fullWidth
+            />
           </DialogContent>
         )
       }
